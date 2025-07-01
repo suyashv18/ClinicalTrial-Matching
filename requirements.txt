@@ -8,3 +8,4 @@ streamlit
 langgraph
 pydantic
 pandas
+sentence-transformers
