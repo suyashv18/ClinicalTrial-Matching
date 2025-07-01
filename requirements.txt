@@ -1,0 +1,10 @@
+faiss_cpu
+langchain-huggingface
+langchain-community   
+langchain-groq                                                                                        
+pypdf
+python-dotenv
+streamlit
+langgraph
+pydantic
+pandas
