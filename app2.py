@@ -23,9 +23,8 @@ import re
 from dotenv import load_dotenv
 
 load_dotenv()
-groq_api_key = os.getenv("GROQ_API_KEY")
-password = os.getenv("PASSWORD")
-# password = "zzlbeqzfkhcqtqgz"
+groq_api_key = st.secrets["GROQ_API_KEY"]
+password = st.secrets["PASSWORD"]
 # Page config
 st.set_page_config(
     page_title="Clinical Trial Matcher", 
@@ -430,13 +429,18 @@ builder.set_entry_point("agent1")
 graph = builder.compile()
 
 # STREAMLIT UI
-st.markdown('<h1 class="main-header">🏥 Clinical Trial Matching System</h1>', unsafe_allow_html=True)
+col1, col2 = st.columns([1, 8], gap="small")
 
-# col1, col2 = st.columns([1, 8], gap="small")
-# with col1:
-#     st.image("i2e_logo.png", width=90)
-# with col2:
-#     st.markdown('<h1 class="main-header">Clinical Trial Matching System</h1>', unsafe_allow_html=True)
+with col1:
+    try:
+        st.image("i2e_logo.png", width=80)
+    except:
+        st.write("🏥")  
+
+with col2:
+    #st.markdown('<h1 style="color: #2E8B57; font-size: 2.5rem; margin-top: 0;">Clinical Trial Matching System</h1>', unsafe_allow_html=True)
+    # st.markdown('<h1 style="color: #666; font-size: 2.5rem; margin-top: 0;">Clinical Trial Matching System</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 style="color: #000000; font-size: 2.8rem; margin-top: 0;">Clinical Trial Matching System</h1>', unsafe_allow_html=True)
 
 # Sidebar
 with st.sidebar:
